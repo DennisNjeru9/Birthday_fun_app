@@ -20,3 +20,22 @@ h1{
   color: rgb(212,175,55);
 }
 
+p{
+  font-size: larger;
+}
+
+.dates{
+  background-color: rgba(192,192,192,0.9);
+  text-align: center;
+  padding: 20px 10px 20px 10px;
+  width: 50%;
+  margin-left: 450px;
+  margin-top: 40px;
+  font-size: x-large;
+}
+
+input{
+  padding: 10px;
+  margin: 2px;
+}
+
