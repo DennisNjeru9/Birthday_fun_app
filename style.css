@@ -17,7 +17,7 @@ body{
 }
 
 h1{
-  color: rgb(212,175,55);
+  color: rgb(218,165,32);
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -40,5 +40,19 @@ p{
 input{
   padding: 10px;
   margin: 2px;
+  width: 20%;
+}
+
+#female{
+  width: auto;
+}
+
+#male{
+  width: auto;
+}
+
+#sub{
+  font-size: large;
+  color: rgb(153,101,21);
 }
 
