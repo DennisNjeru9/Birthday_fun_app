@@ -41,14 +41,17 @@ input{
   padding: 10px;
   margin: 2px;
   width: 20%;
+  font-size: large;
 }
 
 #female{
   width: auto;
+  margin: 2px;
 }
 
 #male{
   width: auto;
+  margin: 2px;
 }
 
 #sub{
