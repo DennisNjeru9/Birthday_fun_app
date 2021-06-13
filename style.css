@@ -18,10 +18,13 @@ body{
 
 h1{
   color: rgb(212,175,55);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 p{
-  font-size: larger;
+  font-size: x-large;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
 }
 
 .dates{
