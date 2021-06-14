@@ -35,6 +35,8 @@ p{
   margin-left: 460px;
   margin-top: 40px;
   font-size: x-large;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
 }
 
 input{
@@ -60,13 +62,15 @@ input{
 }
 
 .returned{
-  background-color: rgba(192,192,192,0.9);
+  background-color: rgba(245,245,245,0.8);
   text-align: center;
   padding: 20px 10px 20px 10px;
-  width: 50%;
-  margin-left: 460px;
+  width: 60%;
+  margin-left: 370px;
   margin-top: 40px;
   font-size: x-large;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 800;
 }
 
 #weekday{
