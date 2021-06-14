@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akan Birthday Names</title>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
   </head>
   <body>
     <div class="welcome">
@@ -20,22 +19,23 @@
       <p>Enter your names in the profile form below and submit to know your Akan Name</p>
     </div>
     <div class="dates">
-      <form>
+      <form id="resetter">
           <label for="ybirth">Year of Birth</label>
           <input type="text" id="ybirth" name="ybirth" placeholder="Eg: 1990"><br>
           <label for="mbirth">Month of Birth</label>
           <input type="text" id="mbirth" name="mbirth" placeholder="Between 1 and 12"><br>
           <label for="dbirth">Date of Birth</label>
           <input type="text" id="dbirth" name="dbirth" placeholder="Between 1 and 31"><br>
-          <label for="male">Male</label>
+          <label for="gender">Male</label>
           <input type="radio" id="male" class="gender" name="gender" value="other">
-          <label for="female">Female</label>
+          <label for="gender">Female</label>
           <input type="radio" id="female" class="gender" name="gender" value="other"><br>
-          <button type="submit" id="sub" onclick="akanName()">Submit</button>
+          <button type="button" id="sub" onclick="akanName()">Submit</button>
       </form>
     </div>
     <div>
-      <div class="returned">Your Akan name is <span id="akanname"></span> becuase you were born on a <span id="weekday"></span></div>
+      <div class="returned">Your Akan name is <span id="akanname"></span> because you were born on a <span id="weekday"></span></div>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
