@@ -13,4 +13,8 @@ function dayOfTheWeek(){
 
   if (mm <=0 || mm >= 12) alert("The month number you have entered is invalid. Kindly enter a valid number between 1 and 12!")
   if (dd <=0 || dd >=31) alert("The date you have entered is invalid. Kindly enter a valid date between 1 and 31!");
+
+  let weekday = (((cc/4)-(2*cc-1))+(5*yy/4))+((26*(mm+1)/10)+dd)%7;
+
+  return Math.floor(weekday);
 }
