@@ -59,3 +59,22 @@ input{
   color: rgb(153,101,21);
 }
 
+.returned{
+  background-color: rgba(192,192,192,0.9);
+  text-align: center;
+  padding: 20px 10px 20px 10px;
+  width: 50%;
+  margin-left: 460px;
+  margin-top: 40px;
+  font-size: x-large;
+}
+
+#weekday{
+  font-size: xx-large;
+  color: rgb(153,101,21);
+}
+
+#akanname{
+  font-size: xx-large;
+  color: rgb(153,101,21);
+}
