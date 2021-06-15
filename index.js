@@ -1,48 +1,63 @@
-let yearOfBirth = document.querySelector("#ybirth").value;
-let monthOfBirth = document.querySelector("#mbirth").value;
-let dateOfBirth = document.querySelector("#dbirth").value;
+let masculine = [
+  {birthdate:"Sunday",name:"Kwasi"},
+  {birthdate:"Monday",name:"Kwadwo"},
+  {birthdate:"Tuesday",name:"Kwabena"},
+  {birthdate:"Wednesday",name:"Kwaku"},
+  {birthdate:"Thursday",name:"Yaw"},
+  {birthdate:"Friday",name:"Koffi"},
+  {birthdate:"Saturday",name:"Kwame"}
+];
 
-let maleAkan = [{day:"Sunday", name:"Kwasi"},{day:"Monday", name:"Kwadwo"},{day:"Tuesday", name:"Kwabena"},{day:"Wednesday", name:"Kwaku"},{day:"Thursday", name:"Yaw"}, {day:"Friday", name:"Kofi"},{day:"Saturday", name:"Kwame"}];
-let femaleAkan = [{day:"Sunday", name:"Akosua"},{day:"Monday", name:"Adwoa"},{day:"Tuesday", name:"Abenaa"},{day:"Wednesday", name:"Akua"},{day:"Thursday", name:"Yaa"}, {day:"Friday", name:"Afua"},{day:"Saturday", name:"Ama"}]
+let feminine = [
+  {birthdate:"Sunday",name:"Akosua"},
+  {birthdate:"Monday",name:"Adwoa"},
+  {birthdate:"Tuesday",name:"Abenaa"},
+  {birthdate:"Wednesday",name:"Akua"},
+  {birthdate:"Thursday",name:"Yaa"},
+  {birthdate:"Friday",name:"Afua"},
+  {birthdate:"Saturday",name:"Ama"}
+];
+
 
 function dayOfTheWeek(){
-  let dd = dateOfBirth;
-  let mm = monthOfBirth;
-  let cc = yearOfBirth.slice(0,2);
-  let yy = yearOfBirth.slice(2,4);
+  let dd = parseInt(document.querySelector("#date").value);
+  let mm = parseInt(document.querySelector("#month").value);
+  let year = document.querySelector("#year").value;
+ 
+  let cc = parseInt(year.slice(0,2)); // century digit
+  let yy = parseInt(year.slice(2,4)); // year digit
 
-  if (mm <=0 || mm >= 12) alert("The month number you have entered is invalid. Kindly enter a valid number between 1 and 12!")
-  if (dd <=0 || dd >=31) alert("The date you have entered is invalid. Kindly enter a valid date between 1 and 31!");
+  if(dd <= 0 || dd > 31) alert("The date you have entered is invalid. Kindly enter a valid date between 1 and 31!");
+  if(mm <= 0 || mm > 12) alert("The month number you have entered is invalid. Kindly enter a valid number between 1 and 12");
+ 
+  let birthdate =  ( ( (cc/4) -2*cc-1) + ((5*yy/4) ) + ((26*(mm+1)/10)) + dd ) % 7;;
 
-  let weekday = (((cc/4)-(2*cc-1))+(5*yy/4))+((26*(mm+1)/10)+dd)%7;
-
-  return Math.floor(weekday);
+  return Math.floor(birthdate);
 }
 
-function akanName(){
-  let gender = document.querySelector('input[name="gender"]:checked');
-
-  if (gender === null){
-    alert ("Kindly select your gender");
-  } else{
-    gender = gender.value;
+function computeAkanName(){
+  let gender = document.querySelector('input[name="sex"]:checked');
+  if(gender === null){
+      alert("Kindly select your gender to get the correct Akan!");
+  }else{
+      gender = gender.value;
   }
 
-  let wd = dayOfTheWeek();
+  let akanDay = dayOfTheWeek();
 
-  let maleAkanName = maleAkan[wd].name;
-  let femaleAkanName = femaleAkan[wd].name;
-  let dayName = female[wd].day;
+  let feminineName = feminine[akanDay].name;
+  let masculineName = masculine[akanDay].name;
+  let dayName = feminine[akanDay].birthdate;
 
-  if (gender === "Male"){
-    document.querySelector("#akanname").innerHTML = maleAkanName;
-    document.querySelector("#weekday").innerHTML = dayName;
+  if(gender === "Male"){
+      document.querySelector("#akan_name_day").innerHTML = "Your Akan Name is" + " " + masculineName+ " " + "because you were born on a" + " "+ dayName;
   }else if(gender === "Female"){
-    document.quertySelector("#akanname").innerHTML = femaleAkanName;
-    document.querySelector("#weekday").innerHTML = dayName;
-  }else {
-    alert("There must have been invalid inputs entered. Kindly enter the right inputs!");
+      document.querySelector("#akan_name_day").innerHTML = "Your Akan Name is" + " " + feminineName + " " + "because you were born on a" + " " + dayName;
+  }else{
+      alert("Kindly enter the right input for gender!");
   }
 
-  document.querySelector("#resetter").reset();
+  document.getElementById("fill_data").reset();
 }
+
+

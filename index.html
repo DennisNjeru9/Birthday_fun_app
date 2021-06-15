@@ -18,23 +18,36 @@
       </p>
       <p>Enter your names in the profile form below and submit to know your Akan Name</p>
     </div>
-    <div class="dates">
-      <form id="resetter">
-          <label for="ybirth">Year of Birth</label>
-          <input type="text" id="ybirth" name="ybirth" placeholder="Eg: 1990"><br>
-          <label for="mbirth">Month of Birth</label>
-          <input type="text" id="mbirth" name="mbirth" placeholder="Between 1 and 12"><br>
-          <label for="dbirth">Date of Birth</label>
-          <input type="text" id="dbirth" name="dbirth" placeholder="Between 1 and 31"><br>
-          <label for="gender">Male</label>
-          <input type="radio" id="male" class="gender" name="gender" value="other">
-          <label for="gender">Female</label>
-          <input type="radio" id="female" class="gender" name="gender" value="other"><br>
-          <button type="button" id="sub" onclick="akanName()">Submit</button>
+    <div class="fill_form">
+      <form id="fill_data">
+        <div>
+          <label for="year">Year of Birth</label>
+          <input type="number" id="year" placeholder="Eg: 1990">
+        </div>
+        <div>
+          <label for="month">Month of Birth</label>
+          <input type="text" id="month" placeholder="Between 1 and 12">
+        </div>
+        <div>
+          <label for="date">Date of Birth</label>
+          <input type="number" id="date" placeholder="Between 1 and 31">
+        </div>
+        <div>
+          <fieldset>
+            <legend>Gender</legend>
+              <input type="radio" name="sex" id="female1" value="Female">
+              <label for="sex1">Female</label>
+              <input type="radio" name="sex" id="male1" value="Male">
+              <label for="sex2">Male</label>
+          </fieldset>
+        </div>
+        <div>
+          <button type="button" id="sub" onclick="computeAkanName()">Submit</button>
+        </div>
       </form>
     </div>
-    <div>
-      <div class="returned">Your Akan name is <span id="akanname"></span> because you were born on a <span id="weekday"></span></div>
+    <div class="answer">
+      <span id="akan_name_day"></span>
     </div>
     <script src="index.js"></script>
   </body>
